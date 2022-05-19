@@ -1,1 +1,56 @@
+header file
 
+class Payment
+{
+private:
+	int paymentID;
+	char paymentmethod[20];
+	double paymentamount;
+public:
+	Payment();
+	Payment(int paymentID,const char paymentmethod[],double paymentamount);
+	void checkPayment();
+	void confirmPayment();
+	void displayPaymentDetails();
+	~Payment();
+};
+
+
+cpp file
+
+#include<cstring>
+#include<iostream> 
+#include"complaint.h"
+#include"customer.h"
+using namespace std;
+complaint:: complaint()
+{
+	int fformId;
+	char ttype;
+	
+	type=ttype;
+	formId=fformId;
+}
+void complaint::Choosetype(char ttype)
+{
+	int CEPlan, RCplan, Mreport;
+	RCplan = 1;
+	CEPlan = 2;
+	Mreport = 3;
+	cout<<"Enter the complaint type : "<<endl;
+	cin>>ttype;	
+	// return ttype;	
+}
+void complaint::Settypeform(int usName, int polID, int conNumber, int mail, int bnkdeatails, int cplan, int nplane)
+{	
+}
+void complaint::checkform()
+{	
+}
+int complaint::GenarateformID()
+{	
+}
+complaint::~complaint()
+{	
+	//destructor
+}
