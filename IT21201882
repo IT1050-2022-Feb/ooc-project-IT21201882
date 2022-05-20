@@ -39,7 +39,7 @@ void complaint::Choosetype(char ttype)
 	Mreport = 3;
 	cout<<"Enter the complaint type : "<<endl;
 	cin>>ttype;	
-	// return ttype;	
+		
 }
 void complaint::Settypeform(int usName, int polID, int conNumber, int mail, int bnkdeatails, int cplan, int nplane)
 {	
