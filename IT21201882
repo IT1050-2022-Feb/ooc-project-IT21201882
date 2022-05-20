@@ -1,20 +1,19 @@
 header file
 
-class Payment
+class complaint
 {
 private:
-	int paymentID;
-	char paymentmethod[20];
-	double paymentamount;
+	char type;
+	int formId;
 public:
-	Payment();
-	Payment(int paymentID,const char paymentmethod[],double paymentamount);
-	void checkPayment();
-	void confirmPayment();
-	void displayPaymentDetails();
-	~Payment();
-};
+	complaint();
+	char Choosetype(char type);
+	void Settypeform(int usName, int polID, int conNumber, int mail, int bnkdeatails, int cplane, int nplan);
+	void checkform();
+	int GenarateformID();
+	~complaint();
 
+};
 
 cpp file
 
