@@ -1,0 +1,37 @@
+//agent.h
+#include<cstring>
+
+class agent
+{
+private:
+	int AgentID; 
+	string AgentName; 
+	string agentEmail; 
+	int agentNo;
+
+
+public:
+	void displayDetail(int AID, string Aname, string AEmail, int ANo);
+	void Forwardusercompains();
+	void Investigationofcomplaints();
+	void checkcomplain();
+};
+
+//agent.cpp
+#include<cstring>
+
+class agent
+{
+private:
+	int AgentID; 
+	string AgentName; 
+	string agentEmail; 
+	int agentNo;
+
+
+public:
+	void displayDetail(int AID, string Aname, string AEmail, int ANo);
+	void Forwardusercompains();
+	void Investigationofcomplaints();
+	void checkcomplain();
+}; 
