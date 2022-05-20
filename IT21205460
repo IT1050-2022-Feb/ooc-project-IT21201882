@@ -1,0 +1,156 @@
+//header files
+
+//guest.h
+guest.h
+
+#include<cstring>
+#include "plan.h"
+#define SIZE 1
+class guest
+{
+protected:
+	char policyNumber[30];
+	char name[50];
+	char nic[20];
+	char address[70];
+	int dob;
+	int telephoneNumber;
+	Plan *p[SIZE];
+
+public:
+	guest();
+	guest(char gName[], char gNic[], char gAddress[], int gDob, int gTeleNumber);
+	void registerUser();
+	void choosePlan(Plan* gplan);
+	void displayDetails();
+	~guest();
+};
+
+
+//plan.h
+#pragma once
+#include"guest.h"
+
+
+class Plan
+{
+protected:
+	int planId;
+	double planPrice;
+	const char planDetails[30];
+	const char planStatus[50];
+
+public:
+	Plan();
+	Plan(int pId, double pPrice, const  char pDetails[], const  char pStatus[], const  char gName[], const  char gNic[], const  char gAddress[], int gDob, int gTeleNumber);
+	void deletePlanDetails();
+	void updatePlanDetails();
+	double calPlanPrice();
+	void displayPlanDetails();
+	void checkAvailability();
+	~Plan();
+};
+
+//cpp files
+//guest.cpp
+#include "guest.h"
+#include<iostream>
+#include<cstring>
+
+guest::guest()
+{
+	strcpy(policyNumber, "");
+	strcpy(name, "");
+	strcpy(nic, "");
+	strcpy(address, "");
+	dob = 0;
+	telephoneNumber = 0;
+}
+
+guest::guest(char gName[], char gNic[], char gAddress[], int gDob, int gTeleNumber)
+
+{
+	strcpy(name, gName);
+	strcpy(nic, gNic);
+	strcpy(address, gAddress);
+	dob = gDob;
+	telephoneNumber = gTeleNumber;
+}
+
+void guest::choosePlan()
+{
+	//	cout << "Your selection successfull" << endl;
+}
+
+void guest::displayDetails()
+{
+	cout << "Name : " << name << endl;
+	cout << "NIC : " << nic << endl;
+	cout << "Address : " << address << endl;
+	cout << "DOB : " << dob << endl;
+	cout << "Telephone Number : " << telephoneNumber << endl;
+
+}
+
+void guest::registerUser()
+{
+
+}
+
+guest::~guest()
+{
+	cout << "Guest details deleted." << endl;
+}
+
+//plan.cpp
+#include "plan.h"
+#include <cstring>
+
+using namespace std;
+
+Plan::Plan()
+{
+	planId = 0;
+	planPrice = 0;
+	strcpy(planDetails, "");
+	strcpy(planStatus, "");
+}
+
+Plan::Plan(int pId, double pPrice, const char pDetails[], const  char pStatus[], const  char gName[], const  char gNic[], const  char gAddress[], int gDob, int gTeleNumber) :Guest(gName[], gNic[], gAddress[], gDob, gTeleNumber)
+{
+	planId = pId;
+	planPrice = pPrice;
+	strcpy(planDetails, pDetails);
+	strcpy(planStatus, pStatus);
+}
+
+void Plan::checkAvailability()
+{
+
+}
+
+void Plan::deletePlanDetails()
+{
+
+}
+
+void Plan::displayPlanDetails()
+{
+
+}
+
+void Plan::updatePlanDetails()
+{
+
+}
+
+double Plan::calPlanPrice()
+{
+	return 0;
+}
+
+Plan::~Plan()
+{
+
+}
+
