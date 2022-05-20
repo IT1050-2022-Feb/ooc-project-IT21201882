@@ -1,0 +1,123 @@
+// header files
+
+// customer.h 
+
+#include "claim.h"
+#include "guest.h"
+#include "complaint.h"
+#include<cstring>
+#define SIZE 1
+
+class customer:public guest, complaint
+{
+private:
+	const char custUsername;
+	const char custPassword;
+	claim *customerClaim[SIZE];
+public:
+	customer();
+	customer(const char ccustUsername[], const char ccustPassword[], int custPolicyNo, const char custName[],
+		const char ccustAddress[], const char ccustEmai[], int csustPhoneNo, int cid, const char cdate[], double cpayment);
+	void login();
+	void displayDetails();
+	void logout();
+	char checkLogingDetails();
+	~customer();
+
+};
+
+// claim.h
+
+#include<cstring>
+
+class claim
+{
+private:
+	const char claimId[20];
+	const char claimDate[20];
+	double claimAmount;
+public:
+	claim();
+	claim(const char cClaimId[], const char cClaimDate[], double cClaimAmount);
+	void displayClaimDetails();
+	~claim();
+};
+
+
+// Cpp files
+
+// customer.cpp 
+
+#include "customer.h"
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+customer::customer()
+{
+	strcpy(custUsername, "");
+	strcpy(custPassword, "");
+
+
+}
+customer::customer(const char ccustUsername[], const char ccustPassword[], int custPolicyNo, const char custName[],
+	const char ccustAddress[], const char ccustEmai[], int csustPhoneNo, int cid, const char cdate[], double cpayment)
+{
+	strcpy(custUsername, ccustUsername);
+	strcpy(custPassword, ccustPassword);
+
+	customerClaim[0] = new claim(cid, cdate, cpayment);
+}
+
+void customer::login()
+{
+
+}
+void customer::displayDetails()
+{
+
+}
+void customer::logout()
+{
+
+}
+char customer::checkLogingDetails()
+{
+	return 0;
+}
+customer::~customer()
+{
+
+}
+
+
+// claim.cpp 
+
+#include "claim.h"
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+claim::claim()
+{
+	strcpy(claimId, "");
+	strcpy(claimDate, "");
+	claimAmount = 0;
+}
+claim::claim(const char cClaimId[], const char cClaimDate[], double cClaimAmount)
+{
+	strcpy(claimId, cClaimId);
+	strcpy(claimDate, cClaimDate);
+	claimAmount = cClaimAmount;
+}
+void claim::displayClaimDetails()
+{
+	cout << "claim Id : " << claimId < endl;
+	cout << "claim Date : " <<claimDate << endl;
+	cout << "claim Amount : "<< claimAmount << endl;
+}
+claim::~claim()
+{
+
+}
+
