@@ -1,4 +1,4 @@
-header file
+//complaint.h file
 
 class complaint
 {
@@ -15,7 +15,7 @@ public:
 
 };
 
-cpp file
+//complaint.cpp file
 
 #include<cstring>
 #include<iostream> 
